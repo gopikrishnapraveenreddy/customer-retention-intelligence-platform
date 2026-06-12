@@ -97,7 +97,6 @@ The Tableau dashboard should include:
 
 ---
 
-## Dashboard Screenshot
 
 ## Dashboard Screenshot
 
