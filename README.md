@@ -99,9 +99,9 @@ The Tableau dashboard should include:
 
 ## Dashboard Screenshot
 
-Add your Tableau dashboard screenshot here after creating it:
+## Dashboard Screenshot
 
-`dashboard_screenshot.png`
+![Customer Churn Dashboard](dashboard_screenshot.png)
 
 ---
 
