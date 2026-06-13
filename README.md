@@ -1,155 +1,156 @@
-# Customer Churn Risk Analysis & Retention Strategy Dashboard
+# Customer Retention Intelligence Platform
 
-## Project Overview
+## Predicting Customer Churn and Quantifying Revenue at Risk
 
-This project analyzes telecom customer data to identify patterns associated with customer churn. The goal is to help business teams understand which customer segments are most likely to leave and develop targeted retention strategies.
-
-I used Python to clean and prepare the data, SQL to explore churn patterns, and Tableau to design the final dashboard.
+This project develops an end-to-end Customer Retention Intelligence Platform that combines machine learning, business intelligence, and customer risk segmentation to identify customers likely to churn and estimate the revenue impact of customer attrition.
 
 ---
 
 ## Business Problem
 
-Telecom companies lose revenue when customers cancel their services. Acquiring new customers is often more expensive than retaining existing ones, so identifying churn risk early is important for business growth.
+Customer churn directly affects revenue growth and customer lifetime value.
 
-This project answers the question:
+The objective of this project is to:
 
-**Which customer characteristics and service factors are associated with higher churn risk?**
+- Predict customer churn
+- Identify high-risk customers
+- Quantify revenue at risk
+- Support proactive retention strategies
+- Provide executive-level business insights
 
-The analysis focuses on churn trends by contract type, tenure, payment method, internet service, monthly charges, and customer demographics.
+---
+
+## Tools & Technologies
+
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- Tableau
+- SQL
+- GitHub
 
 ---
 
 ## Dataset
 
-The dataset used is the IBM Telco Customer Churn dataset.
+Telco Customer Churn Dataset
 
-The dataset includes customer-level information such as:
-
-- Customer ID
-- Gender
-- Senior citizen status
-- Partner and dependent status
-- Tenure
-- Phone service
-- Internet service
-- Contract type
-- Payment method
-- Monthly charges
-- Total charges
-- Churn status
-
-After cleaning, the analysis-ready dataset contains:
-
-| Metric | Value |
-| :----- | ----: |
-| Valid Customer Records | 7,032 |
-| Churned Customers | 1,869 |
-| Retained Customers | 5,163 |
-| Overall Churn Rate | 26.58% |
-| Average Monthly Charges | $64.80 |
+- Total Customers: 7,032
+- Churned Customers: 1,869
+- Churn Rate: 26.58%
 
 ---
 
-## Tools Used
+## Project Workflow
 
-- Python
-- pandas
-- SQL
-- Tableau
-- Excel/CSV
-- GitHub
+### Data Preparation
 
----
+- Data Cleaning
+- Feature Engineering
+- Risk Segmentation
 
-## Data Cleaning Steps
+### Exploratory Analysis
 
-The raw dataset was cleaned and prepared before dashboard development.
+- Churn Analysis by Contract Type
+- Churn Analysis by Internet Service
+- Churn Analysis by Payment Method
 
-Main cleaning steps included:
+### Machine Learning
 
-- Standardized column names into readable snake_case format.
-- Converted `totalcharges` from text to numeric format.
-- Removed records with missing total charges.
-- Removed duplicate records.
-- Created a numeric churn flag for churn rate calculations.
-- Created tenure groups such as 0-12 Months, 13-24 Months, 25-48 Months, and 49+ Months.
-- Created monthly charge groups to compare churn across customer billing levels.
-- Exported an analysis-ready CSV for SQL analysis and Tableau dashboarding.
+- Logistic Regression
+- Random Forest
+- Model Comparison
+- Customer Risk Scoring
 
----
+### Business Intelligence
 
-## Dashboard Overview
-
-The Tableau dashboard should include:
-
-- KPI card for total customers
-- KPI card for churned customers
-- KPI card for churn rate
-- KPI card for average monthly charges
-- Donut chart for churn vs retained customers
-- Bar chart for churn by contract type
-- Bar chart for churn by internet service
-- Bar chart for churn by payment method
-- Bar chart for churn by tenure group
-- Column chart for average monthly charges by churn status
-- Interactive filters for gender, contract type, internet service, and payment method
+- Revenue at Risk Analysis
+- Feature Importance Analysis
+- Executive Tableau Dashboard
 
 ---
 
+## Machine Learning Results
 
-## Dashboard Screenshot
+| Model | Accuracy |
+|---------|----------|
+| Logistic Regression | 78.04% |
+| Random Forest | 75.41% |
 
-![Customer Churn Dashboard](dashboard_screenshot.png)
+Logistic Regression was selected as the final predictive model due to superior performance.
 
 ---
 
-## Key Insights
+## Feature Importance
 
-- The cleaned dataset contains **7,032 valid customer records**.
-- Around **1,869 customers churned**, resulting in an overall churn rate of **26.58%**.
-- Customers on **Month-to-month contracts** show the highest churn rate at **42.71%**.
-- Customers using **Fiber optic internet service** show the highest churn rate at **41.89%**.
-- Customers using **Electronic check** show the highest churn rate at **45.29%**.
-- Customers in the **0-12 Months tenure group** show the highest churn rate at **47.68%**.
-- Churned customers have an average monthly charge of **$74.44**, compared with **$61.31** for retained customers.
+Top churn drivers identified by the Random Forest model:
+
+1. Monthly Charges
+2. Total Charges
+3. Customer Tenure
+4. Senior Citizen Status
+
+These factors contribute most significantly to customer churn behavior.
+
+---
+
+## Key Business Insights
+
+- Churn Rate: 26.58%
+- Model Accuracy: 78.04%
+- High-Risk Customers Identified: 65
+- Revenue at Risk (High Risk Segment): ~$69K annually
+- Month-to-month contracts exhibit the highest churn propensity
+
+---
+
+## Dashboard
+
+![Customer Retention Dashboard](customer_retention_dashboard.png)
 
 ---
 
 ## Business Recommendations
 
-- Encourage month-to-month customers to switch to annual or two-year contracts through loyalty discounts.
-- Create onboarding and engagement campaigns for customers in their first year.
-- Review pricing and service quality for high-charge customers who may be more likely to churn.
-- Investigate why fiber optic customers show higher churn and improve service experience where needed.
-- Encourage automatic payment methods and reduce reliance on electronic checks.
-- Build retention campaigns focused on high-risk customer segments identified through churn patterns.
+### Immediate Actions
+
+- Prioritize outreach to high-risk customers
+- Offer retention incentives for month-to-month customers
+- Improve onboarding experience for new customers
+
+### Strategic Actions
+
+- Promote longer contract commitments
+- Optimize pricing strategies
+- Monitor churn risk continuously through predictive analytics
 
 ---
 
-## Project Files
+## Repository Structure
 
-| File | Description |
-| :--- | :---------- |
-| README.md | Project summary, process, insights, and recommendations |
-| customer_churn_cleaned.csv | Cleaned dataset used for analysis and Tableau dashboarding |
-| python_data_cleaning.py | Python script used to clean and prepare the dataset |
-| create_tables.sql | SQL script for creating the customer churn table |
-| data_analysis_queries.sql | SQL queries used to analyze churn patterns |
-| data_dictionary.md | Explanation of important dataset columns |
-| tableau_dashboard_requirements.md | Dashboard layout and chart requirements |
-| insights.md | Detailed insights from the analysis |
+```text
+Customer_Retention_Intelligence_Platform.ipynb
+Customer Retention Intelligence Platform.twb
+customer_retention_dashboard.png
 
----
+customer_churn_cleaned.csv
 
-## What I Learned
+create_tables.sql
+data_analysis_queries.sql
 
-Through this project, I practiced cleaning customer data, creating derived fields, writing SQL queries for churn analysis, and preparing a dataset for Tableau dashboarding.
+data_dictionary.md
+insights.md
 
-I also learned how churn can be analyzed across contract type, tenure, payment method, service type, and billing behavior to support customer retention strategies.
+python_data_cleaning.py
+```
 
 ---
 
-## Project Outcome
+## Author
 
-The final analysis identifies key churn risk patterns and provides business recommendations that telecom companies can use to improve customer retention and reduce revenue loss.
+**Gopi Krishna Praveen Reddy Doranala**
+
+MS Business Analytics
+
+University of North Texas
