@@ -135,6 +135,7 @@ Customer Retention Intelligence Platform.twb
 customer_retention_dashboard.png
 
 customer_churn_cleaned.csv
+customer_risk_scores.csv
 
 create_tables.sql
 data_analysis_queries.sql
